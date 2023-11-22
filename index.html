@@ -44,7 +44,7 @@
                 <input class="searchInput" type="text">
             </div>
             <div class="contacts">
-                <div v-for="(person ,i) in contacts " class="contactCard">
+                <div v-for="(person ,i) in contacts " @click="selectChat(i)" class="contactCard">
                     <img :src="person.avatar" alt="">
                     <div class="contactData flexStart">
                         <h4>{{person.name}}</h4>

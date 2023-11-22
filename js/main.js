@@ -3,6 +3,9 @@ const { createApp } = Vue;
 const opzioni = {
     data: function () {
         return {
+
+            counter: 1,
+
             contacts: [
                 {
                     name: 'Michele',
@@ -169,6 +172,10 @@ const opzioni = {
         }
     },
     methods: {
+        selectChat(i) {
+            this.counter = i;
+            console.log("ok:", i)
+        }
        
     }
 }
