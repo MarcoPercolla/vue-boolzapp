@@ -179,6 +179,18 @@ const opzioni = {
             console.log("ok:", i)
         },
 
+        sendResp() {
+            let newMessage = {
+                date: "xxxx",
+                message: "ok",
+                status: "received"
+
+            };
+            this.contacts[this.counter].messages.push(newMessage);
+            
+
+        },
+ 
         addMessage() {
 
             let newMessage = {
@@ -188,7 +200,10 @@ const opzioni = {
 
             };
             this.contacts[this.counter].messages.push(newMessage);
-            this.toSend = ""
+            this.toSend = "";
+
+            setTimeout(this.sendResp, 3000);
+            
 
         }
        
