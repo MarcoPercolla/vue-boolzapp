@@ -81,7 +81,7 @@
             </div>
             <div class="inputBar">
                 <i class="fa-solid fa-message"></i>
-                <input class="messageInput" type="text">
+                <input v-model="toSend" @keyup.enter="addMessage" class="messageInput" type="text">
                 <i class="fa-solid fa-message"></i>
             </div>
 

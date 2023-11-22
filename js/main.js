@@ -6,6 +6,8 @@ const opzioni = {
 
             counter: 1,
 
+            toSend: "",
+
             contacts: [
                 {
                     name: 'Michele',
@@ -175,6 +177,19 @@ const opzioni = {
         selectChat(i) {
             this.counter = i;
             console.log("ok:", i)
+        },
+
+        addMessage() {
+
+            let newMessage = {
+                date: "xxxx",
+                message: this.toSend,
+                status: "sent"
+
+            };
+            this.contacts[this.counter].messages.push(newMessage);
+            this.toSend = ""
+
         }
        
     }
