@@ -14,23 +14,23 @@ body {
     width:80vw;
     height: 95vh;
     margin: 2.5vh auto;
-    background-color: whitesmoke;
+    background-color: rgb(255, 255, 255);
     border-radius: 0.2rem;
     display: flex;
 }
 
 .leftSide{
-    border: grey solid 1px;
+    
     width: 34%;
 
 }
 
 .userProfile{
     height: 4rem;
-    border:  rgb(255, 0, 0) solid 1px;;
+    
     display: flex;
     align-items: center;
-    background-color: #dbdbdb;
+    background-color: #ececec;
 }
 
 .userProfileCom{
@@ -40,41 +40,47 @@ body {
 
 .banner{
     height: 5rem;
-    border:  rgb(0, 213, 255) solid 1px;
+    background-color: aqua;
     display: flex;
     align-items: center;
 }
 
 .searchBar{
     height: 3rem;
-    border:  rgb(255, 0, 242) solid 1px;;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .contacts{
     height: calc(100% - 12rem);
-    border:  rgb(255, 102, 0) solid 1px;
     overflow: auto;
 }
 
 .contactCard{
     height: 5rem;
-    border:  rgb(34, 0, 255) solid 1px;;
+    border:  rgb(165, 165, 165) solid 1px;
+    display: flex;
+    align-items: center;
 }
 
 .rightSide{
-    border: grey solid 1px;
+    
     width: 66%;
+    border-left: #aaaaaa solid 1px;
 
 }
 
 .contactProfile{
     height: 4rem;
-    border:  rgb(255, 0, 0) solid 1px;;
+    display: flex;
+    align-items: center;
+    background-color: #ececec;
+    
 }
 
 .messageRoom{
     height: calc(100% - 8rem);
-    border:  rgb(255, 102, 0) solid 1px;
     overflow: auto;
     background-image: url(../img/mine.jpg);
     padding: 0.5rem;
@@ -121,7 +127,12 @@ body {
 
 .inputBar{
     height: 4rem;
-    border:  rgb(255, 0, 0) solid 1px;;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color:#ececec;
+
+    
 }
 
 img {
@@ -148,4 +159,32 @@ img {
     text-align: center;
     
 
+}
+
+.searchInput{
+    width: 90%;
+    height: 1.5rem;
+}
+
+.messageInput {
+    width: 85%;
+    height: 3rem;
+}
+
+.dateUp{
+    color: #aaaaaa;
+    align-self: self-start;
+    margin-left: auto;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.contactData p {
+    color:#aaaaaa;
+}
+
+.flexStart {
+    align-self: flex-start;
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
 }
