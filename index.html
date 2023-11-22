@@ -47,8 +47,8 @@
                 <div v-for="(person ,i) in contacts " class="contactCard">
                     <img :src="person.avatar" alt="">
                     <div class="contactData flexStart">
-                        <h4>blablabla</h4>
-                        <p>blabla</p>
+                        <h4>{{person.name}}</h4>
+                        <p>{{person.messages[(person.messages.length) - 1].message}}</p>
                     </div>
                     <h6 class="dateUp">12:12</h6>
 
