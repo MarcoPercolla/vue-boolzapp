@@ -73,12 +73,10 @@
 
             </div>
             <div class="messageRoom">
-                <div class="message">
-                    <p class="userMessage">ciao</p>
+                <div v-for="(texts, i) in contacts[counter].messages" class="message">
+                    <p :class="texts.status == 'received' ? 'userMessage' : 'contactMessage' ">{{texts.message}}</p>
                 </div>
-                <div class="message">
-                    <p class="contactMessage">ciao!</p>
-                </div>
+                
 
             </div>
             <div class="inputBar">
