@@ -164,8 +164,9 @@ img {
     padding: 0.8rem;
     margin: 0 0.5rem;
     aspect-ratio: 1 / 1;
-    background-color: red;
+    background-color: white;
     text-align: center;
+    color:aqua;
     
 
 }
@@ -196,4 +197,8 @@ img {
     align-self: flex-start;
     margin-left: 0.5rem;
     margin-top: 0.5rem;
+}
+
+.invisible{
+    display: none;
 }

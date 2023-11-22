@@ -41,10 +41,10 @@
                 </div>
             </div>
             <div class="searchBar">
-                <input class="searchInput" type="text">
+                <input v-model="searchName" class="searchInput" @keyup.enter="searchChat" type="text" placeholder="Cerca o inizia una nuova chat">
             </div>
             <div class="contacts">
-                <div v-for="(person ,i) in contacts " @click="selectChat(i)" class="contactCard" :class="{activeCard: counter == i}">
+                <div v-for="(person ,i) in contacts " @click="selectChat(i)" class="contactCard" :class="{invisible: person.visible == false}" :class="{activeCard: counter == i}" >
                     <img :src="person.avatar" alt="">
                     <div class="contactData flexStart">
                         <h4>{{person.name}}</h4>

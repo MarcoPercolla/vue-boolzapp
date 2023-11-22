@@ -4,6 +4,8 @@ const opzioni = {
     data: function () {
         return {
 
+            searchName: "",
+
             counter: 1,
 
             toSend: "",
@@ -177,6 +179,25 @@ const opzioni = {
         selectChat(i) {
             this.counter = i;
             console.log("ok:", i)
+        },
+
+        searchChat() {
+            this.contacts.forEach(element => {
+                console.log(element.name);
+                console.log(this.searchName);
+                let Elemento = element.name.toUpperCase();
+                let Ricercato = this.searchName.toUpperCase();
+                if(Elemento.includes(Ricercato)){
+                    element.visible = true;
+
+                }else{
+                    element.visible = false;
+                }
+                
+
+                
+                console.log(element.visible)
+            });
         },
 
         sendResp() {
