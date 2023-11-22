@@ -60,10 +60,10 @@
         <div class="rightSide">
             <div class="contactProfile">
 
-                <img src="img/avatar_io.jpg" alt="">
+                <img :src="contacts[counter].avatar" alt="">
                 <div class="contactData">
-                    <h4>blablabla</h4>
-                    <p>blabla</p>
+                    <h4>{{contacts[counter].name}}</h4>
+                    <p>ultimo accesso oggi alle: blabla</p>
                 </div>
                 <div class="userProfileCom">
                     <i class="fa-solid fa-message"></i>
