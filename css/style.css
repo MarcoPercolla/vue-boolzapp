@@ -64,6 +64,15 @@ body {
     align-items: center;
 }
 
+.activeCard{
+    background-color: #aaaaaa;
+}
+
+.activeCard div p, .activeCard h6 {
+    color: black;
+
+}
+
 .rightSide{
     
     width: 66%;
