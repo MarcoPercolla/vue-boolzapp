@@ -4,6 +4,8 @@ const opzioni = {
     data: function () {
         return {
 
+            selStatus: "true",
+
             searchName: "",
 
             counter: 1,
@@ -226,6 +228,33 @@ const opzioni = {
             setTimeout(this.sendResp, 3000);
             
 
+        },
+
+        openSel(i) {
+
+            
+            const sel = document.querySelectorAll(".msgActions");
+            console.log(sel);
+            console.log(i);
+            console.log(this.selStatus);
+            
+            sel.forEach((element ,index) => {
+                
+                if (index == i && this.selStatus == "true" ) {
+                    console.log("1");
+                    element.classList.remove("invisible");
+                    this.selStatus = i;
+                }else if (index == i && this.selStatus == i ){
+                    console.log("2");
+                    this.selStatus = "true";
+                    element.classList.add("invisible");
+                    
+                }else {
+                    element.classList.add("invisible");
+                    console.log("ok")
+                }
+            });
+           
         }
        
     }

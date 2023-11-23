@@ -76,7 +76,15 @@
             </div>
             <div class="messageRoom">
                 <div v-for="(texts, i) in contacts[counter].messages" class="message">
-                    <div :class="texts.status == 'received' ? 'userMessage' : 'contactMessage' "><p>{{texts.message}}</p><i class="fa-solid fa-ellipsis-vertical icon"></i></div>
+                    <div :class="texts.status == 'received' ? 'userMessage' : 'contactMessage' ">
+                        <p>{{texts.message}}</p>
+                        <i @click="openSel(i)" class="fa-solid fa-ellipsis-vertical icon"></i>
+                        <div class="msgActions invisible ">
+                            <h5>delete</h5>
+                            <h5>info</h5>
+                        </div>
+
+                    </div>
                     
                     
                 </div>
