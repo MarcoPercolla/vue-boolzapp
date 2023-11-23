@@ -225,12 +225,19 @@ img {
 }
 
 .msgActions {
+    color: #838383;
+    font-size: 0.5rem;
     background-color: #ffffff;
     position: absolute;
     right: 0.5rem;
     top: calc(50% + 1rem);
-    padding: 1rem;
+    padding:  0.5rem 0;
     box-shadow: 3px 2px 17px -8px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 3px 2px 17px -8px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 3px 2px 17px -8px rgba(0, 0, 0, 0.75);
+}
+
+h6{
+    font-weight: 500;
+    margin: 0.5rem;
 }
