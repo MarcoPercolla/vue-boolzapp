@@ -249,10 +249,16 @@ const opzioni = {
                     this.selStatus = "true";
                     element.classList.add("invisible");
                     
+                }else if (index == i ){
+                    element.classList.remove("invisible");
+                    this.selStatus = i;
+                    console.log("3")
                 }else {
                     element.classList.add("invisible");
-                    console.log("ok")
+                    console.log("4")
+
                 }
+
             });
            
         }

@@ -40,7 +40,7 @@ body {
 
 .banner {
     height: 5rem;
-    background-color: aqua;
+    background-color: rgb(150, 231, 255);
     display: flex;
     align-items: center;
 }
@@ -187,7 +187,7 @@ img {
     aspect-ratio: 1 / 1;
     background-color: white;
     text-align: center;
-    color: aqua;
+    color:  rgb(150, 231, 255);
 
 
 }
