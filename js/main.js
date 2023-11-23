@@ -238,13 +238,15 @@ const opzioni = {
 
             console.log(this.counter , i);
 
+
             if (this.contacts[this.counter].messages.length == 1) {
 
                 this.contacts[this.counter].messages = [""];
+                document.querySelector(".msgActions").classList.add("invisible");
                 
             } else {
                 this.contacts[this.counter].messages.splice(i , 1);
-                this.selStatus = "true"; 
+                
             }
             
             console.log(this.counter , i);
