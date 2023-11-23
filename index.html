@@ -50,9 +50,9 @@
                     <img :src="person.avatar" alt="">
                     <div class="contactData flexStart">
                         <h4>{{person.name}}</h4>
-                        <p>{{person.messages[(person.messages.length) - 1].message}}</p>
+                        <p v-if="person.messages.length">{{person.messages[(person.messages.length) - 1].message}}</p>
                     </div>
-                    <h6 class="dateUp">{{person.messages[(person.messages.length) - 1].date}}</h6>
+                    <h6 v-if="person.messages.length" class="dateUp">{{person.messages[(person.messages.length) - 1].date}}</h6>
 
                 </div>
 
@@ -76,8 +76,8 @@
             </div>
             <div class="messageRoom">
                 <div v-for="(texts, i) in contacts[counter].messages" class="message">
-                    <div class="allMsg" :class="texts.status == 'received' ? 'userMessage' : 'contactMessage' ">
-                        <p>{{texts.message}}</p>
+                    <div :class="texts.status == 'received' ? 'userMessage' : 'contactMessage' ">
+                        <p v-if="texts.message.length">{{texts.message}}</p>
                         <i @click="openSel(i)" class="fa-solid fa-ellipsis-vertical icon"></i>
                         <div class="msgActions invisible ">
                             <h6>Message info</h6>

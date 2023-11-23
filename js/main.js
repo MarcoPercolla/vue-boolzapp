@@ -174,7 +174,7 @@ const opzioni = {
                         }
                     ],
                 }
-            ]    
+            ]
         }
     },
     methods: {
@@ -193,15 +193,15 @@ const opzioni = {
                 console.log(this.searchName);
                 let Elemento = element.name.toUpperCase();
                 let Ricercato = this.searchName.toUpperCase();
-                if(Elemento.includes(Ricercato)){
+                if (Elemento.includes(Ricercato)) {
                     element.visible = true;
 
-                }else{
+                } else {
                     element.visible = false;
                 }
-                
 
-                
+
+
                 console.log(element.visible)
             });
         },
@@ -214,10 +214,10 @@ const opzioni = {
 
             };
             this.contacts[this.counter].messages.push(newMessage);
-            
+
 
         },
- 
+
         addMessage() {
 
             let newMessage = {
@@ -230,66 +230,52 @@ const opzioni = {
             this.toSend = "";
 
             setTimeout(this.sendResp, 3000);
-            
+
 
         },
 
         deleteMsg(i) {
 
-            console.log(this.counter , i);
-
-
-            if (this.contacts[this.counter].messages.length == 1) {
-
-                this.contacts[this.counter].messages = [""];
-                document.querySelector(".msgActions").classList.add("invisible");
-                document.querySelector(".allMsg").classList.add("invisible");
-                
-            } else {
-                this.contacts[this.counter].messages.splice(i , 1);
-                
-                
-                
-            }
-            
-            console.log(this.counter , i);
+            this.contacts[this.counter].messages.splice(i, 1);
+            document.querySelectorAll(".msgActions")[i].classList.add("invisible");
+            this.selStatus = "true";
 
 
         },
 
         openSel(i) {
 
-            
+
             const sel = document.querySelectorAll(".msgActions");
             console.log(sel);
             console.log(i);
             console.log(this.selStatus);
-            
-            sel.forEach((element ,index) => {
-                
-                if (index == i && this.selStatus == "true" ) {
+
+            sel.forEach((element, index) => {
+
+                if (index == i && this.selStatus == "true") {
                     console.log("1");
                     element.classList.remove("invisible");
                     this.selStatus = i;
-                }else if (index == i && this.selStatus == i ){
+                } else if (index == i && this.selStatus == i) {
                     console.log("2");
                     this.selStatus = "true";
                     element.classList.add("invisible");
-                    
-                }else if (index == i ){
+
+                } else if (index == i) {
                     element.classList.remove("invisible");
                     this.selStatus = i;
                     console.log("3")
-                }else {
+                } else {
                     element.classList.add("invisible");
                     console.log("4")
 
                 }
 
             });
-           
+
         }
-       
+
     }
 }
 
