@@ -33,11 +33,14 @@
                 </div>
 
             </div>
-            <div class="banner">
-                <i class="fa-solid fa-bell-slash"></i>
+            <div class="banner" @click="notifyAlert()">
+                <i v-if="!notification" class="fa-solid fa-bell-slash notify "></i>
+                <i v-if="notification" class="fa-solid fa-bell notify red"></i>
+
                 <div>
                     <h4>Ricevi notifiche di nuovi messaggi</h4>
-                    <p>Attiva notifiche desktop</p>
+                    <p v-if="notification">Attiva notifiche desktop</p>
+                    <p v-if="!notification">Disattiva notifiche desktop</p>
                 </div>
             </div>
             <div class="searchBar">

@@ -4,6 +4,8 @@ const opzioni = {
     data: function () {
         return {
 
+            notification: true,
+
             selStatus: "true",
 
             searchName: "",
@@ -185,6 +187,10 @@ const opzioni = {
                 element.classList.add("invisible");
             });
             console.log("ok:", i)
+        },
+
+        notifyAlert() {
+            this.notification = !(this.notification);
         },
 
         searchChat() {
