@@ -234,9 +234,21 @@ const opzioni = {
 
         },
 
-        deleteMsg() {
-            console.log("ok")
+        deleteMsg(i) {
+
+            console.log(this.counter , i);
+
+            if (this.contacts[this.counter].messages.length == 1) {
+
+                this.contacts[this.counter].messages = [""];
+                
+            } else {
+                this.contacts[this.counter].messages.splice(i , 1);
+                this.selStatus = "true"; 
+            }
             
+            console.log(this.counter , i);
+
 
         },
 
