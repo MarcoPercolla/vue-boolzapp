@@ -180,6 +180,10 @@ const opzioni = {
     methods: {
         selectChat(i) {
             this.counter = i;
+            const sel = document.querySelectorAll(".msgActions");
+            sel.forEach(element => {
+                element.classList.add("invisible");
+            });
             console.log("ok:", i)
         },
 
