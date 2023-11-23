@@ -153,9 +153,13 @@ img {
     object-fit: cover;
 }
 
-.fa-message{
+.icon{
     margin: 0.5rem;
     color: #aaaaaa;
+}
+
+.icon:hover{
+    color: #838383;
 }
 
 .fa-bell-slash{
