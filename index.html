@@ -41,10 +41,12 @@
                 </div>
             </div>
             <div class="searchBar">
-                <input v-model="searchName" class="searchInput" @keyup.enter="searchChat" type="text" placeholder="Cerca o inizia una nuova chat">
+                <input v-model="searchName" class="searchInput" @keyup.enter="searchChat" type="text"
+                    placeholder="Cerca o inizia una nuova chat">
             </div>
             <div class="contacts">
-                <div v-for="(person ,i) in contacts " @click="selectChat(i)" class="contactCard" :class="{activeCard: counter == i, invisible: person.visible == false}"   >
+                <div v-for="(person ,i) in contacts " @click="selectChat(i)" class="contactCard"
+                    :class="{activeCard: counter == i, invisible: person.visible == false}">
                     <img :src="person.avatar" alt="">
                     <div class="contactData flexStart">
                         <h4>{{person.name}}</h4>
@@ -74,14 +76,17 @@
             </div>
             <div class="messageRoom">
                 <div v-for="(texts, i) in contacts[counter].messages" class="message">
-                    <p :class="texts.status == 'received' ? 'userMessage' : 'contactMessage' ">{{texts.message}}</p>
+                    <div :class="texts.status == 'received' ? 'userMessage' : 'contactMessage' "><p>{{texts.message}}</p><i class="fa-solid fa-ellipsis-vertical icon"></i></div>
+                    
+                    
                 </div>
-                
+
 
             </div>
             <div class="inputBar">
                 <i class="fa-solid fa-face-smile icon"></i>
-                <input v-model="toSend" @keyup.enter="addMessage" class="messageInput" type="text" placeholder="Scrivi un messaggio...">
+                <input v-model="toSend" @keyup.enter="addMessage" class="messageInput" type="text"
+                    placeholder="Scrivi un messaggio...">
                 <i class="fa-solid fa-microphone icon"></i>
             </div>
 
