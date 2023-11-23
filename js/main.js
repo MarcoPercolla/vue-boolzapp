@@ -234,6 +234,12 @@ const opzioni = {
 
         },
 
+        deleteMsg() {
+            console.log("ok")
+            
+
+        },
+
         openSel(i) {
 
             
