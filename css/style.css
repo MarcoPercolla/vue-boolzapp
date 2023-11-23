@@ -237,6 +237,13 @@ img {
     -moz-box-shadow: 3px 2px 17px -8px rgba(0, 0, 0, 0.75);
 }
 
+.message .icon{
+    width: 1.5rem;
+    padding: 0.5rem 0;
+    text-align: center;
+    margin:0;
+}
+
 h6{
     font-weight: 500;
     margin: 0.5rem;
