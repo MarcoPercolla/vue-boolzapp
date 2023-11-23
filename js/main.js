@@ -243,9 +243,12 @@ const opzioni = {
 
                 this.contacts[this.counter].messages = [""];
                 document.querySelector(".msgActions").classList.add("invisible");
+                document.querySelector(".allMsg").classList.add("invisible");
                 
             } else {
                 this.contacts[this.counter].messages.splice(i , 1);
+                
+                
                 
             }
             
