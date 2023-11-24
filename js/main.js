@@ -12,6 +12,8 @@ const opzioni = {
 
             counter: 1,
 
+            tracker: 1,
+
             toSend: "",
 
             contacts: [
@@ -219,12 +221,14 @@ const opzioni = {
                 status: "received"
 
             };
-            this.contacts[this.counter].messages.push(newMessage);
-
+            console.log("11111",this.counter);
+            const newText = this.contacts[this.tracker].messages;
+            newText.push(newMessage);
 
         },
 
         addMessage() {
+            console.log("11111",this.counter);
 
             let newMessage = {
                 date: "xxxx",
@@ -234,9 +238,10 @@ const opzioni = {
             };
             this.contacts[this.counter].messages.push(newMessage);
             this.toSend = "";
+            this.tracker= this.counter;
 
-            setTimeout(this.sendResp, 3000);
-
+            setTimeout(this.sendResp , 3000);
+            
 
         },
 
@@ -246,11 +251,9 @@ const opzioni = {
             document.querySelectorAll(".msgActions")[i].classList.add("invisible");
             this.selStatus = "true";
 
-
         },
-
+        // open Select input*
         openSel(i) {
-
 
             const sel = document.querySelectorAll(".msgActions");
             console.log(sel);
