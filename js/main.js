@@ -16,7 +16,7 @@ const opzioni = {
 
             timeCheck: "",
 
-            infoCheck: "",
+            infoCheck: "none",
 
             toSend: "",
 
@@ -201,14 +201,12 @@ const opzioni = {
         findDate() {
             let checkpoint = new Date();
             this.timeCheck = checkpoint.toLocaleString();
-            // this.hourCheck = "0"+checkpoint.getHours().toString()+":0"+checkpoint.getMinutes().toString() ;
-            
-            
+            // this.hourCheck = "0"+checkpoint.getHours().toString()+":0"+checkpoint.getMinutes().toString() ;   
         },
 
         dateToggle(i) {
             if (this.infoCheck == i) {
-                this.infoCheck = "";
+                this.infoCheck = "none";
                 
             } else {
                 this.infoCheck = i;
@@ -219,8 +217,7 @@ const opzioni = {
 
         searchChat() {
             this.contacts.forEach(element => {
-                console.log(element.name);
-                console.log(this.searchName);
+
                 let Elemento = element.name.toUpperCase();
                 let Ricercato = this.searchName.toUpperCase();
                 if (Elemento.includes(Ricercato)) {
@@ -230,9 +227,6 @@ const opzioni = {
                     element.visible = false;
                 }
 
-
-
-                console.log(element.visible)
             });
         },
 
@@ -279,28 +273,25 @@ const opzioni = {
         openSel(i) {
 
             const sel = document.querySelectorAll(".msgActions");
-            console.log(sel);
-            console.log(i);
-            console.log(this.selStatus);
+
 
             sel.forEach((element, index) => {
 
                 if (index == i && this.selStatus == "true") {
-                    console.log("1");
+
                     element.classList.remove("invisible");
                     this.selStatus = i;
                 } else if (index == i && this.selStatus == i) {
-                    console.log("2");
+
                     this.selStatus = "true";
                     element.classList.add("invisible");
 
                 } else if (index == i) {
                     element.classList.remove("invisible");
                     this.selStatus = i;
-                    console.log("3")
+
                 } else {
                     element.classList.add("invisible");
-                    console.log("4")
 
                 }
 

@@ -20,14 +20,11 @@ body {
 }
 
 .leftSide {
-
     width: 34%;
-
 }
 
 .userProfile {
     height: 4rem;
-
     display: flex;
     align-items: center;
     background-color: #ececec;
@@ -71,14 +68,11 @@ body {
 .activeCard div p,
 .activeCard h6 {
     color: black;
-
 }
 
 .rightSide {
-
     width: 66%;
     border-left: #aaaaaa solid 1px;
-
 }
 
 .contactProfile {
@@ -86,7 +80,6 @@ body {
     display: flex;
     align-items: center;
     background-color: #ececec;
-
 }
 
 .messageRoom {
@@ -94,8 +87,6 @@ body {
     overflow: auto;
     background-image: url(../img/mine.jpg);
     padding: 0.5rem;
-
-
 }
 
 .message {
@@ -104,7 +95,6 @@ body {
     display: flex;
     align-items: center;
     margin: 0.5rem auto;
-
 }
 
 .userMessage {
@@ -125,7 +115,6 @@ body {
 }
 
 .contactMessage {
-
     width: 30%;
     min-height: 3rem;
     background-color: rgb(43, 255, 0);
@@ -140,14 +129,11 @@ body {
     margin-top: 1rem;
     margin-bottom: 1rem;
     position: relative;
-
 }
 
 
 .message p {
-
     width: calc(100% - 5rem);
-
 }
 
 
@@ -157,12 +143,9 @@ body {
     align-items: center;
     justify-content: space-around;
     background-color: #ececec;
-
-
 }
 
 img {
-
     border-radius: 50%;
     height: 80%;
     margin: 0 0.5rem;
@@ -189,7 +172,6 @@ img {
     background-color: white;
     text-align: center;
     color:  rgb(150, 231, 255);
-
 
 }
 
@@ -244,7 +226,7 @@ img {
 
 .message .icon{
     width: 1.5rem;
-    padding: 0.5rem 0;
+    padding: auto 0;
     text-align: center;
     margin:0;
 }
@@ -252,4 +234,9 @@ img {
 h6{
     font-weight: 500;
     margin: 0.5rem;
+}
+
+.dateMsg{
+    color: #838383;
+    font-size: 0.5rem;
 }
