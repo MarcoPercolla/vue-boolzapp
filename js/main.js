@@ -197,6 +197,13 @@ const opzioni = {
             this.notification = !(this.notification);
         },
 
+        findDate() {
+            let checkpoint = new Date().toLocaleString();
+            this.timeCheck = checkpoint;
+            console.log("aaaaaaaaa",this.timeCheck)
+            
+        },
+
         searchChat() {
             this.contacts.forEach(element => {
                 console.log(element.name);
@@ -217,8 +224,9 @@ const opzioni = {
         },
 
         sendResp() {
+            this.findDate();
             let newMessage = {
-                date: "xxxx",
+                date: this.timeCheck,
                 message: "ok",
                 status: "received"
 
@@ -230,10 +238,10 @@ const opzioni = {
         },
 
         addMessage() {
-            console.log("11111",this.counter);
+            this.findDate();
 
             let newMessage = {
-                date: "xxxx",
+                date: this.timeCheck,
                 message: this.toSend,
                 status: "sent"
 
