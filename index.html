@@ -22,6 +22,7 @@
 
     <div id="app" class="container">
         <div class="leftSide">
+            <!-- sezione profilo utente con immagine nome e tre icone azioni -->
             <div class="userProfile">
 
                 <img src="img/avatar_io.jpg" alt="">
@@ -33,6 +34,8 @@
                 </div>
 
             </div>
+
+            <!-- banner per attivazione/disattivazione notifiche desktop(fittizio) -->
             <div class="banner" @click="notifyAlert()">
                 <i v-if="!notification" class="fa-solid fa-bell-slash notify "></i>
                 <i v-if="notification" class="fa-solid fa-bell notify red"></i>
@@ -43,13 +46,18 @@
                     <p v-if="!notification">Disattiva notifiche desktop</p>
                 </div>
             </div>
+
+            <!-- barra di ricerca con v-model per cercare correlazione tra input e nome contatto -->
             <div class="searchBar">
                 <input v-model="searchName" class="searchInput" @keyup="searchChat" type="text"
                     placeholder="Cerca o inizia una nuova chat">
             </div>
+
+            <!-- sezione contatti generata con ciclo -->
             <div class="contacts">
                 <div v-for="(person ,i) in contacts " @click="selectChat(i)" class="contactCard"
                     :class="{activeCard: counter == i, invisible: person.visible == false}">
+                    <!-- ogni sezione singolo contatto avra(prendendo dati da array): immagine, nome, messaggio e data personalizzati(v-if per data e messaggio che possono non esserci se cancelliamo tutti i messaggi) -->
                     <img :src="person.avatar" alt="">
                     <div class="contactData flexStart">
                         <h4>{{person.name}}</h4>
@@ -63,6 +71,8 @@
 
         </div>
         <div class="rightSide">
+            <!-- sezione profilo contatto selezionato -->
+            <!-- contiene immagine, nome e data ultimo messaggio di contatto corrente (non ultimo accesso essendo fittizio)-->
             <div class="contactProfile">
 
                 <img :src="contacts[counter].avatar" alt="">
@@ -77,14 +87,24 @@
                 </div>
 
             </div>
+
+            <!-- sezione messaggi in chat selezionata -->
             <div class="messageRoom">
+                <!-- per ogni messaggio nei messaggi di una chat creo un elemento (class= contactMessage o userMessage) -->
                 <div v-for="(texts, i) in contacts[counter].messages" class="message">
+                    <!-- sceglie classe per messaggio ricevuto o inviato tramite parametro status in data() -->
                     <div :class="texts.status == 'received' ? 'userMessage' : 'contactMessage' ">
+
+                        <!-- v-if per situazione limite in cui ogni messaggio nell'array viene eliminato -->
                         <p v-if="texts.message.length">{{texts.message}}</p>
+                        <!-- v-if per toggle visibilita elemento -->
                         <p class="dateMsg" v-if="infoCheck == i">{{texts.date}}</p>
+                        <!-- icona che funge da dropdown (handler?) grazie a metodo openSel() -->
                         <i @click="openSel(i)" class="fa-solid fa-ellipsis-vertical icon"></i>
+
                         <div class="msgActions invisible ">
                             <h6 @click="dateToggle(i)">Message info</h6>
+
                             <h6 @click="deleteMsg(i)">Delete message</h6>
                         </div>
 
@@ -95,6 +115,8 @@
 
 
             </div>
+
+            <!-- elemento input per compilare contenuto messaggio nella creazione di nuovi messaggi da inviare -->
             <div class="inputBar">
                 <i class="fa-solid fa-face-smile icon"></i>
                 <input v-model="toSend" @keyup.enter="addMessage" class="messageInput" type="text"
