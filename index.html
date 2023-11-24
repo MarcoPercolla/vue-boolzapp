@@ -68,7 +68,7 @@
                 <img :src="contacts[counter].avatar" alt="">
                 <div class="contactData">
                     <h4>{{contacts[counter].name}}</h4>
-                    <p>ultimo accesso oggi alle: blabla</p>
+                    <p v-if="contacts[counter].messages.length">ultimo accesso oggi alle: {{contacts[counter].messages[(contacts[counter].messages.length)-1].date}}</p>
                 </div>
                 <div class="userProfileCom">
                     <i class="fa-solid fa-magnifying-glass icon"></i>

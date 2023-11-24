@@ -14,6 +14,8 @@ const opzioni = {
 
             tracker: 1,
 
+            timeCheck: "",
+
             toSend: "",
 
             contacts: [
