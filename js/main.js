@@ -6,18 +6,24 @@ const opzioni = {
 
             notification: true,
 
+            // status del elemento input selection (dropdown in singoli messaggi)(controlla se visibile o meno dropdown)
             selStatus: "true",
 
             searchName: "",
 
+            // tiene traccia dell index del Contacts corrente
             counter: 1,
 
+            // tiene traccia di counter su Nuovo messaggio
             tracker: 1,
-
+            
+            // accetta valori data corrente ogni volta che viene creato nuovo messaggio
             timeCheck: "",
 
+            // Status dell'elemento p in message controllato da selection in dropdown (data nel mio caso)
             infoCheck: "none",
 
+            // valore message in oggetto nuovo messaggio  da legare a this.contacts(i).message nei nuovi messaggi scritti da utente
             toSend: "",
 
             contacts: [
@@ -186,8 +192,12 @@ const opzioni = {
         }
     },
     methods: {
+        
         selectChat(i) {
+
             this.counter = i;
+
+            // elemento dropdown parte nascosto
             const sel = document.querySelectorAll(".msgActions");
             sel.forEach(element => {
                 element.classList.add("invisible");
@@ -215,6 +225,7 @@ const opzioni = {
             
         },
 
+        // controlla relazione tra nome singolo contatto in contacts(array) e input in ricerca
         searchChat() {
             this.contacts.forEach(element => {
 
@@ -230,6 +241,7 @@ const opzioni = {
             });
         },
 
+        // genera risposta ok e push in messages di chat corrente
         sendResp() {
             this.findDate();
             let newMessage = {
@@ -244,6 +256,7 @@ const opzioni = {
 
         },
 
+        // genera risposta da input e push in messages di chat corrente
         addMessage() {
             this.findDate();
 
@@ -257,11 +270,13 @@ const opzioni = {
             this.toSend = "";
             this.tracker= this.counter;
 
+            // richiama sendResp con un ritardo di 3 sec
             setTimeout(this.sendResp , 3000);
             
 
         },
 
+        // cancella messaggio da array messaggi in chat corrente e nasconde info di messaggio corrente
         deleteMsg(i) {
 
             this.contacts[this.counter].messages.splice(i, 1);
@@ -269,7 +284,7 @@ const opzioni = {
             this.selStatus = "true";
 
         },
-        // open Select input*
+        // open Select input
         openSel(i) {
 
             const sel = document.querySelectorAll(".msgActions");
