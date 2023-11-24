@@ -16,6 +16,8 @@ const opzioni = {
 
             timeCheck: "",
 
+            infoCheck: "",
+
             toSend: "",
 
             contacts: [
@@ -190,7 +192,6 @@ const opzioni = {
             sel.forEach(element => {
                 element.classList.add("invisible");
             });
-            console.log("ok:", i)
         },
 
         notifyAlert() {
@@ -198,9 +199,21 @@ const opzioni = {
         },
 
         findDate() {
-            let checkpoint = new Date().toLocaleString();
-            this.timeCheck = checkpoint;
-            console.log("aaaaaaaaa",this.timeCheck)
+            let checkpoint = new Date();
+            this.timeCheck = checkpoint.toLocaleString();
+            // this.hourCheck = "0"+checkpoint.getHours().toString()+":0"+checkpoint.getMinutes().toString() ;
+            
+            
+        },
+
+        dateToggle(i) {
+            if (this.infoCheck == i) {
+                this.infoCheck = "";
+                
+            } else {
+                this.infoCheck = i;
+                
+            }
             
         },
 
@@ -231,7 +244,7 @@ const opzioni = {
                 status: "received"
 
             };
-            console.log("11111",this.counter);
+            
             const newText = this.contacts[this.tracker].messages;
             newText.push(newMessage);
 

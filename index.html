@@ -68,7 +68,7 @@
                 <img :src="contacts[counter].avatar" alt="">
                 <div class="contactData">
                     <h4>{{contacts[counter].name}}</h4>
-                    <p v-if="contacts[counter].messages.length">ultimo accesso oggi alle: {{contacts[counter].messages[(contacts[counter].messages.length)-1].date}}</p>
+                    <p v-if="contacts[counter].messages.length">ultimo messaggio: {{contacts[counter].messages[(contacts[counter].messages.length)-1].date}}</p>
                 </div>
                 <div class="userProfileCom">
                     <i class="fa-solid fa-magnifying-glass icon"></i>
@@ -81,9 +81,10 @@
                 <div v-for="(texts, i) in contacts[counter].messages" class="message">
                     <div :class="texts.status == 'received' ? 'userMessage' : 'contactMessage' ">
                         <p v-if="texts.message.length">{{texts.message}}</p>
+                        <p v-if="infoCheck == i">{{texts.date}}</p>
                         <i @click="openSel(i)" class="fa-solid fa-ellipsis-vertical icon"></i>
                         <div class="msgActions invisible ">
-                            <h6>Message info</h6>
+                            <h6 @click="dateToggle(i)">Message info</h6>
                             <h6 @click="deleteMsg(i)">Delete message</h6>
                         </div>
 
