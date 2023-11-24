@@ -195,6 +195,7 @@ img {
     margin-left: auto;
     margin-right: 0.5rem;
     margin-top: 0.5rem;
+    width: 5rem;
 }
 
 .contactData p {
@@ -232,8 +233,13 @@ img {
 }
 
 h6{
+
     font-weight: 500;
     margin: 0.5rem;
+}
+
+h6:hover{
+    color: black;
 }
 
 .dateMsg{
